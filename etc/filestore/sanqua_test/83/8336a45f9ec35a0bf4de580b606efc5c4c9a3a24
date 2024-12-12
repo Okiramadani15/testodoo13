@@ -1,0 +1,21 @@
+
+.o_company_1_layout {
+  font-family: 'Lato';
+}
+
+.o_company_1_layout.o_report_layout_standard h2 {
+  color: black;
+}
+
+.o_company_1_layout.o_report_layout_standard #informations strong {
+  color: black;
+}
+
+.o_company_1_layout.o_report_layout_standard #total strong {
+  color: black;
+}
+
+.o_company_1_layout.o_report_layout_standard table thead {
+  color: black;
+}
+

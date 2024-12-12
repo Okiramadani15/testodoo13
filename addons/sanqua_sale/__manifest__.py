@@ -1,0 +1,21 @@
+{
+    'name': 'SanQua Sales Customization',
+    'version': '1.0',
+    'category': 'Sales',
+    'summary': 'Kustomisasi penjualan dan manajemen pelanggan untuk SanQua',
+    'description': 'Modul untuk mengatur divisi, batas kredit, dan pelaporan penjualan khusus SanQua',
+    'author': 'Tim Pengembangan SanQua',
+    'website': 'https://www.sanqua.com',
+    'depends': ['sale', 'stock', 'base'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/res_partner_views.xml',
+        'views/sale_order_views.xml',
+        'views/sanqua_division_views.xml',
+        'views/stock_inventory_report_views.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
