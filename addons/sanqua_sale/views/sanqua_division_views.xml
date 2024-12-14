@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Tree View -->
-    <record id="view_sanqua_division_tree" model="ir.ui.view">
+    <record id="sanqua_division_tree" model="ir.ui.view">
         <field name="name">sanqua.division.tree</field>
         <field name="model">sanqua.division</field>
         <field name="arch" type="xml">
@@ -9,44 +8,43 @@
                 <field name="name"/>
                 <field name="code"/>
                 <field name="description"/>
+                <field name="pricelist_id"/>
             </tree>
         </field>
     </record>
 
-    <!-- Form View -->
-    <record id="view_sanqua_division_form" model="ir.ui.view">
+    <record id="sanqua_division_form" model="ir.ui.view">
         <field name="name">sanqua.division.form</field>
         <field name="model">sanqua.division</field>
         <field name="arch" type="xml">
             <form string="Divisi">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="code"/>
-                        <field name="description"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="pricelist_id"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- Action -->
     <record id="action_sanqua_division" model="ir.actions.act_window">
         <field name="name">Divisi</field>
+        <field name="type">ir.actions.act_window</field>
         <field name="res_model">sanqua.division</field>
         <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
-                Klik untuk membuat divisi baru
-            </p>
-        </field>
     </record>
 
-    <!-- Menu -->
     <menuitem 
         id="menu_sanqua_division" 
         name="Divisi" 
-        parent="sale.menu_sale_config" 
+        parent="sales_team.menu_sale_config" 
         action="action_sanqua_division" 
         sequence="10"/>
 </odoo>

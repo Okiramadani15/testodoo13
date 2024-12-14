@@ -1,0 +1,40 @@
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu Diskon Produk di bawah menu Produk -->
+    <menuitem id="menu_product_discount" name="Diskon Produk"
+              parent="product.menu_product"
+              action="action_product_discount"/>
+
+    <!-- View Tree untuk Diskon Produk -->
+    <record id="view_product_discount_tree" model="ir.ui.view">
+        <field name="name">product.discount.tree</field>
+        <field name="model">product.discount</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="discount_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- View Form untuk Diskon Produk -->
+    <record id="view_product_discount_form" model="ir.ui.view">
+        <field name="name">product.discount.form</field>
+        <field name="model">product.discount</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="product_id"/>
+                    <field name="discount_amount"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action untuk Menampilkan Diskon Produk -->
+    <record id="action_product_discount" model="ir.actions.act_window">
+        <field name="name">Diskon Produk</field>
+        <field name="res_model">product.discount</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo> -->

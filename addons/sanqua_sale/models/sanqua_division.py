@@ -8,11 +8,18 @@ class SanquaDivision(models.Model):
         ('SQA', 'SanQua'),
         ('GLN', 'Galon'),
         ('BTV', 'Batavia'),
-        ('BVG', 'Minuman')
+        ('BVG', 'Baverage')
     ], string='Nama Divisi', required=True)
     
     code = fields.Char('Kode Divisi', required=True)
     description = fields.Text('Deskripsi')
+
+      # Tambahkan relasi dengan Pricelist (opsional)
+    pricelist_id = fields.Many2one(
+        'product.pricelist', 
+        string='Pricelist Default'
+    )
+    
     
     _sql_constraints = [
         ('unique_code', 'unique(code)', 'Kode divisi harus unik!')
