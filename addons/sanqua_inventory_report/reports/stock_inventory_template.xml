@@ -31,3 +31,39 @@
         </t>
     </template>
 </odoo>
+
+
+
+<!-- <odoo>
+    <template id="stock_inventory_report_template">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>Stock Inventory Report</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Product Code</th>
+                            <th>Product Name</th>
+                            <th>Saldo Awal</th>
+                            <th>Total Masuk</th>
+                            <th>Total Keluar</th>
+                            <th>Saldo Akhir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="line">
+                            <tr>
+                                <td><t t-esc="line.product_code" /></td>
+                                <td><t t-esc="line.product_name" /></td>
+                                <td><t t-esc="line.saldo_awal" /></td>
+                                <td><t t-esc="line.total_masuk" /></td>
+                                <td><t t-esc="line.total_keluar" /></td>
+                                <td><t t-esc="line.saldo_akhir" /></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo> -->

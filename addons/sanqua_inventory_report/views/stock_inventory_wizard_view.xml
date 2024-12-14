@@ -5,8 +5,8 @@
         <field name="arch" type="xml">
             <form string="Stock Inventory Report">
                 <group>
-                    <field name="date_start" />
-                    <field name="date_end" />
+                    <field name="start_date" />
+                    <field name="end_date" />
                     <field name="location_id" />
                 </group>
                 <footer>

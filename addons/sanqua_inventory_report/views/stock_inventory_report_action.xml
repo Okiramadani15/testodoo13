@@ -1,3 +1,69 @@
 <odoo>
-    <menuitem id="menu_stock_inventory_report" name="Stock Inventory Report" parent="stock.menu_stock_root" action="action_stock_inventory_wizard"/>
+    <record id="action_stock_inventory_wizard" model="ir.actions.act_window">
+        <field name="name">Stock Inventory Wizard</field>
+        <field name="res_model">stock.inventory.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+     <record id="view_stock_inventory_report_wizard_form" model="ir.ui.view">
+        <field name="name">stock.inventory.wizard.form</field>
+        <field name="model">stock.inventory.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Stock Inventory Report Wizard">
+                <group>
+                    <field name="product_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </group>
+                <footer>
+                    <button string="Generate Report" type="object" name="create_inventory_report" class="btn-primary"/>
+                    <button string="Cancel" type="object" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_stock_inventory_report_tree" model="ir.ui.view">
+        <field name="name">stock.inventory.report.tree</field>
+        <field name="model">stock.inventory.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="product_id"/>
+                <field name="saldo_awal"/>
+                <field name="total_masuk"/>
+                <field name="total_keluar"/>
+                <field name="saldo_akhir"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_stock_inventory_report_form" model="ir.ui.view">
+        <field name="name">stock.inventory.report.form</field>
+        <field name="model">stock.inventory.report</field>
+        <field name="arch" type="xml">
+            <form string="Stock Inventory Report">
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="saldo_awal"/>
+                        <field name="total_masuk"/>
+                        <field name="total_keluar"/>
+                        <field name="saldo_akhir"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
+
+
+
+<!-- <odoo>
+    <record id="action_stock_inventory_report" model="ir.actions.act_window">
+        <field name="name">Stock Inventory Report</field>
+        <field name="res_model">stock.inventory.report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+</odoo> -->

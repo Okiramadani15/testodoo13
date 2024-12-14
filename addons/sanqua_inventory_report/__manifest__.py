@@ -1,5 +1,5 @@
 {
-    'name': 'Stock Inventory Report Customization',
+    'name': 'SanQua Stock Inventory Report Customization',
     'version': '1.0',
     'category': 'Warehouse',
     'summary': 'Custom stock inventory report with filters',
