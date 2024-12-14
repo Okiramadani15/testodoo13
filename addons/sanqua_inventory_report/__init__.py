@@ -1,2 +1,3 @@
-from . import wizard
-from . import stock_inventory_report
+from . import models
+from . import wizards
+from . import reports

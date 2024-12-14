@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_stock_inventory_wizard_form" model="ir.ui.view">
+        <field name="name">stock.inventory.wizard.form</field>
+        <field name="model">stock.inventory.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Stock Inventory Report">
+                <group>
+                    <field name="date_start" />
+                    <field name="date_end" />
+                    <field name="location_id" />
+                </group>
+                <footer>
+                    <button string="Generate Report" type="object" name="generate_report" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_stock_inventory_wizard" model="ir.actions.act_window">
+        <field name="name">Stock Inventory Wizard</field>
+        <field name="res_model">stock.inventory.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_stock_inventory_wizard_form"/>
+    </record>
+</odoo>
