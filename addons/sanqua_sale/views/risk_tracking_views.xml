@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View untuk Risiko Pelanggan -->
+    <record id="view_sanqua_customer_risk_tracking_tree" model="ir.ui.view">
+        <field name="name">sanqua.customer.risk.tracking.tree</field>
+        <field name="model">sanqua.customer.risk.tracking</field>
+        <field name="arch" type="xml">
+            <tree string="Pelacakan Risiko Pelanggan">
+                <field name="partner_id"/>
+                <field name="division_id"/>
+                <field name="total_overlimit_orders"/>
+                <field name="total_overdue_invoices"/>
+                <field name="risk_level"/>
+                <field name="last_risk_assessment"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View untuk Risiko Pelanggan -->
+    <record id="view_sanqua_customer_risk_tracking_form" model="ir.ui.view">
+        <field name="name">sanqua.customer.risk.tracking.form</field>
+        <field name="model">sanqua.customer.risk.tracking</field>
+        <field name="arch" type="xml">
+            <form string="Pelacakan Risiko Pelanggan">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="division_id"/>
+                            <field name="risk_level"/>
+                        </group>
+                        <group>
+                            <field name="total_overlimit_orders"/>
+                            <field name="total_overdue_invoices"/>
+                            <field name="last_risk_assessment"/>
+                            <field name="risk_start_date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View untuk Risiko Pelanggan -->
+    <record id="view_sanqua_customer_risk_tracking_search" model="ir.ui.view">
+        <field name="name">sanqua.customer.risk.tracking.search</field>
+        <field name="model">sanqua.customer.risk.tracking</field>
+        <field name="arch" type="xml">
+            <search string="Pelacakan Risiko Pelanggan">
+                <field name="partner_id"/>
+                <field name="division_id"/>
+                <field name="risk_level"/>
+                <filter name="high_risk" string="Risiko Tinggi" 
+                        domain="[('risk_level', '=', 'high')]"/>
+                <filter name="medium_risk" string="Risiko Sedang" 
+                        domain="[('risk_level', '=', 'medium')]"/>
+                <filter name="low_risk" string="Risiko Rendah" 
+                        domain="[('risk_level', '=', 'low')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Divisi" name="group_by_division" 
+                            context="{'group_by': 'division_id'}"/>
+                    <filter string="Tingkat Risiko" name="group_by_risk_level" 
+                            context="{'group_by': 'risk_level'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action Window untuk Risiko Pelanggan -->
+    <record id="action_sanqua_customer_risk_tracking" model="ir.actions.act_window">
+        <field name="name">Pelacakan Risiko Pelanggan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sanqua.customer.risk.tracking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_sanqua_customer_risk_tracking_search"/>
+    </record>
+
+    <!-- Menuitem untuk Risiko Pelanggan -->
+    <menuitem 
+        id="menu_sanqua_customer_risk_tracking" 
+        name="Pelacakan Risiko Pelanggan" 
+        action="action_sanqua_customer_risk_tracking" 
+        sequence="20"/>
+</odoo>

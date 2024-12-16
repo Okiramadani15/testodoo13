@@ -3,4 +3,4 @@ from . import sale_order
 from . import res_partner
 from . import sanqua_division
 from . import product
-# from . import diskon
+from . import risk_tracking
