@@ -14,7 +14,7 @@ class SanquaDivision(models.Model):
     code = fields.Char('Kode Divisi', required=True)
     description = fields.Text('Deskripsi')
 
-      # Tambahkan relasi dengan Pricelist (opsional)
+  
     pricelist_id = fields.Many2one(
         'product.pricelist', 
         string='Pricelist Default'
